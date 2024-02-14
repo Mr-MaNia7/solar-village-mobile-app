@@ -9,20 +9,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_example/consts.dart';
 
 enum MenuOptions {
-  showUserAgent,
-  listCookies,
   clearCookies,
-  addToCache,
-  listCache,
   clearCache,
-  navigationDelegate,
-  doPostRequest,
-  loadLocalFile,
-  loadFlutterAsset,
-  loadHtmlString,
-  transparentBackground,
-  setCookie,
-  logExample,
 }
 
 class SampleMenu extends StatelessWidget {
@@ -40,93 +28,20 @@ class SampleMenu extends StatelessWidget {
       key: const ValueKey<String>('ShowPopupMenu'),
       onSelected: (MenuOptions value) {
         switch (value) {
-          case MenuOptions.showUserAgent:
-            _onShowUserAgent();
-          case MenuOptions.listCookies:
-            _onListCookies(context);
           case MenuOptions.clearCookies:
             _onClearCookies(context);
-          case MenuOptions.addToCache:
-            _onAddToCache(context);
-          case MenuOptions.listCache:
-            _onListCache();
           case MenuOptions.clearCache:
             _onClearCache(context);
-          case MenuOptions.navigationDelegate:
-            _onNavigationDelegateExample();
-          case MenuOptions.doPostRequest:
-            _onDoPostRequest();
-          case MenuOptions.loadLocalFile:
-            _onLoadLocalFileExample();
-          case MenuOptions.loadFlutterAsset:
-            _onLoadFlutterAssetExample();
-          case MenuOptions.loadHtmlString:
-            _onLoadHtmlStringExample();
-          case MenuOptions.transparentBackground:
-            _onTransparentBackground();
-          case MenuOptions.setCookie:
-            _onSetCookie();
-          case MenuOptions.logExample:
-            _onLogExample();
         }
       },
       itemBuilder: (BuildContext context) => <PopupMenuItem<MenuOptions>>[
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.showUserAgent,
-          child: Text('Show user agent'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.listCookies,
-          child: Text('List cookies'),
-        ),
         const PopupMenuItem<MenuOptions>(
           value: MenuOptions.clearCookies,
           child: Text('Clear cookies'),
         ),
         const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.addToCache,
-          child: Text('Add to cache'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.listCache,
-          child: Text('List cache'),
-        ),
-        const PopupMenuItem<MenuOptions>(
           value: MenuOptions.clearCache,
           child: Text('Clear cache'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.navigationDelegate,
-          child: Text('Navigation Delegate example'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.doPostRequest,
-          child: Text('Post Request'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.loadHtmlString,
-          child: Text('Load HTML string'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.loadLocalFile,
-          child: Text('Load local file'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.loadFlutterAsset,
-          child: Text('Load Flutter Asset'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          key: ValueKey<String>('ShowTransparentBackgroundExample'),
-          value: MenuOptions.transparentBackground,
-          child: Text('Transparent background example'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.setCookie,
-          child: Text('Set cookie'),
-        ),
-        const PopupMenuItem<MenuOptions>(
-          value: MenuOptions.logExample,
-          child: Text('Log example'),
         ),
       ],
     );
